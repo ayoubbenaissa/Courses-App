@@ -29,6 +29,22 @@ since this was a small and quick app, I did not use neither Redux or Context API
 I used "useState" hook as well as [react-signals](https://www.npmjs.com/package/@preact/signals-react)
 
 
+## File structure
+- #### `public` - This holds all of our static files
+- #### `src`
+    - #### `api` - This folder holds API calls to backend (for this app there is only one file here)
+    - #### `assets` - This folder contains mainly used icon within the app
+    - #### `components` - This folder holds all of the different components that will make up our FE app
+    - #### `pages` - contains files presenting pages of the apps (all courses, update course ....)
+    - #### `state-signals` - contains files reflecting state management logic
+    - #### `styles` - CSS files
+    - #### `types` - for defining types
+    - #### `App.*` - This is what renders all of our browser routes and different views
+    - #### `index.*` - This is what renders the react app by rendering App
+- #### `package.json` - Defines npm behaviors and packages for the client
+- #### `Dockerfile` - Dockerfile for containarization logic
+- #### `README` - This file :grinning:
+
 
 **Note:**
 This app can surely be improved, specially in terms of reusability :smiling_face_with_tear:

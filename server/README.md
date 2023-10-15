@@ -22,6 +22,14 @@ since the backend is mainly concerned about managing courses, so all calls go to
 - **Update:** updates a course given its id & the new course content
 - **Delete:** deletes a course given its id
 
+## File structure
+- #### `src`
+    - #### `models` - This folder files defining Mongoose Schemas
+    - #### `routes` - This folder files scoped for routes logic definition
+- #### `package.json` - Defines npm behaviors and packages for the client
+- #### `Dockerfile` - Dockerfile for containarization logic
+- #### `README` - This file :grinning:
+
 **Note:**
 This app can surely be improved, specially in terms of validation :smiling_face_with_tear:
 >I still have some minor open TODOs & also should have added unit tests at least :thumbsup:
