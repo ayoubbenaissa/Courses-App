@@ -10,12 +10,12 @@ const makeApiCall = async (input: RequestInfo, init?: RequestInit) => {
 };
 
 export const fetchCourses = async (): Promise<Course[]> => {
-    const courses = await makeApiCall(`/courses`, { method: 'GET'});
+    const courses = await makeApiCall(`http://localhost:5000/courses`, { method: 'GET'});
     return courses.json();
 };
 
 export const createCourse = async (courseInput: Omit<Course, "_id">): Promise<Course> => {
-    const createdCourse = await makeApiCall(`/courses`, 
+    const createdCourse = await makeApiCall(`http://localhost:5000/courses`, 
     {
         method: 'POST',
         headers: {
@@ -32,7 +32,7 @@ export async function deleteCourse(courseId: string) {
 };
 
 export async function updateCourse(courseId: string, courseToUpdate: Omit<Course, "_id">): Promise<Course> {
-    const updatedCourse = await makeApiCall(`/courses/${courseId}`,
+    const updatedCourse = await makeApiCall(`http://localhost:5000/courses/${courseId}`,
         {
             method: "PATCH",
             headers: {

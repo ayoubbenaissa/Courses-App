@@ -3,11 +3,17 @@ import "dotenv/config";
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import cors from "cors"
 
 import { routerCourses } from "./routes/course";
 
 // instantiate express:
 const app = express();
+
+// white-list calls to backend:
+app.use(cors({
+    origin: '*' // TODO: check how to ONLY whitelist FE
+}));
 // add middleware to handle JSON content
 app.use(bodyParser.json());
 
