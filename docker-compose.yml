@@ -1,0 +1,25 @@
+services:
+  frontend:
+    image: frontend
+    stdin_open: true #keep container up and listening for request
+    ports: 
+      - "3000:3000"
+    networks:
+      - course-network
+  server:
+    image: server
+    ports:
+      - "5000:5000"
+    networks:
+      - course-network
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3.6.19-xenial #public mongo image
+    ports:
+      - "27017:27017"
+    networks:
+      - course-network
+networks:
+  course-network: #used for communication btw the containers
+    driver: bridge
