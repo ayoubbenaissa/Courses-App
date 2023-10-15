@@ -1,0 +1,24 @@
+.actions {
+    width: 60%;
+    margin-left: 10%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+.modify-course-item_actions_item {
+    position: relative;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: end;
+    cursor: pointer;
+}
+
+.modify-course-item_actions_item img {
+    width: 25px;
+    height: 25px;
+    margin-right: 2px;
+}

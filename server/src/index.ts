@@ -26,8 +26,8 @@ mongoose.connect(process.env.MONGODB_URI)
 
     const PORT = process.env.PORT || 5000; // TODO: think about PROD
     // run server:
-    app.listen(3000, () => {
-        console.log(`server running at PORT 5000`);
+    app.listen(PORT, () => {
+        console.log(`server running at PORT ${PORT}`);
     });
 })
 .catch((err) => console.log(' ** ERROR ** ', err));

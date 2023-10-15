@@ -1,0 +1,49 @@
+.course-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #242554;
+    border-radius: 8px;
+    margin: 10px 20px;
+    padding: 10px 5px;
+}
+
+.course-field {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-field_content {
+    margin: 10px 0px;
+}
+
+.add-member {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.add-member img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.create-update-course-info {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #00000066;
+}
+
+.create-update-course-info_modal {
+    background-color: #6b5aaf;
+    margin-top: 30%;
+    padding: 10px;
+}

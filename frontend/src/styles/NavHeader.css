@@ -1,0 +1,25 @@
+.nav-header {
+    position: sticky;
+    top: 0;
+    height: 50px;
+}
+
+.nav-content {
+    display: flex;
+    float: right;
+}
+
+.nav-item {
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+.nav-item a {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: #808080;
+}

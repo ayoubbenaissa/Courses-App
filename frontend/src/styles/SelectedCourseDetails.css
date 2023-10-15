@@ -1,0 +1,40 @@
+.course-details_container {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000000b3 !important;
+}
+
+.course-details_modal {
+    background-color: #6b5aaf;
+    margin-top: 15%;
+    padding: 10px;
+    border-radius: 15px;
+    width: fit-content;
+    margin-left: 20%;
+}
+
+.course-details_member {
+    margin-left: 10px;
+}
+
+.course-details_description_label {
+    border-top: 1px solid black;
+}
+
+.course-details_coach {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.course-details_coach p {
+    margin-right: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}

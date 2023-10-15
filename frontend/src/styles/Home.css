@@ -1,0 +1,23 @@
+.home {
+    padding: 5px 10px;
+}
+.home h1 {
+    color: #ebd8fc;
+}
+
+.home-description_opening {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.home-description ul li {
+    font-size: 15px;
+    list-style-type: circle;
+    margin: 5px 0px;
+}
+
+.courses-link {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+}
