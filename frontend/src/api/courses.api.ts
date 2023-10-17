@@ -28,7 +28,7 @@ export const createCourse = async (courseInput: Omit<Course, "_id">): Promise<Co
 };
 
 export async function deleteCourse(courseId: string) {
-    await makeApiCall(`/courses/${courseId}`, { method: "DELETE" });
+    await makeApiCall(`http://localhost:5000/courses/${courseId}`, { method: "DELETE" });
 };
 
 export async function updateCourse(courseId: string, courseToUpdate: Omit<Course, "_id">): Promise<Course> {

@@ -44,7 +44,7 @@ export const CourseItem = ({courseItem}: {courseItem: Course}) => {
         setIsCourseBeingDeleted(true);
         setTimeout(() => {
             setIsCourseBeingDeleted(false);
-            areCoursesUpdated$.value = true; // TODO: think of a better way to manage state
+            areCoursesUpdated$.value = courseItem._id; // TODO: think of a better way to manage state
             navigate("/courses");
         }, 1000);
     }
