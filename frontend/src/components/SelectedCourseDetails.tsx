@@ -5,6 +5,7 @@ import { MouseClickEvent } from "../types/utility-types";
 
 import iconModify from "../assets/icons-modify.png";
 import { courseToUpdate$ } from "../state-signals/courseToUpdate.signal";
+import { UpdateCourse } from "./action-components/Update";
 
 export const SelectedCourseDetails = ({selectedCourse, closeModal}: {selectedCourse: Course, closeModal: (e: MouseClickEvent) => void}) => {
     const navigate = useNavigate();
@@ -17,10 +18,7 @@ export const SelectedCourseDetails = ({selectedCourse, closeModal}: {selectedCou
     return (
         <div className="course-details_container" onClick={(e) => closeModal(e)}>
             <div className="course-details_modal" onClick={(e) => e.stopPropagation()}>
-                <div className="course-details-item_actions_item" onClick={() => handleOpenCoursePage()}>
-                                <img src={iconModify} alt="icon update" />
-                                <p>update course</p>
-                </div>
+                <UpdateCourse className="course-details-item_actions_item" onClick={() => handleOpenCoursePage()} />
                 <h1 className="course-details_name">{selectedCourse.name}</h1>
                 <div className="course-details_coach">
                     <p>Coach: </p>
