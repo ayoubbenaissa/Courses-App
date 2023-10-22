@@ -1,3 +1,3 @@
 import { signal } from "@preact/signals-react";
 
-export const areCoursesUpdated$ = signal<string>('');
+export const areCoursesUpdated$ = signal<string>("");

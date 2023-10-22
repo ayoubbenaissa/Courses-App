@@ -3,7 +3,7 @@ import "dotenv/config";
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-import cors from "cors"
+import cors from "cors";
 
 import { routerCourses } from "./routes/course";
 
@@ -11,29 +11,32 @@ import { routerCourses } from "./routes/course";
 const app = express();
 
 // white-list calls to backend:
-app.use(cors({
-    origin: '*' // TODO: check how to ONLY whitelist FE
-}));
+app.use(
+  cors({
+    origin: "*", // TODO: check how to ONLY whitelist FE
+  }),
+);
 // add middleware to handle JSON content
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.MONGODB_URI)
-.then(() => {
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
     // successful connection to DB
     console.log("successfully conntected to DB!");
 
     // use routes
-    app.use('/courses', routerCourses);
+    app.use("/courses", routerCourses);
 
     // no route
     app.use((req, res) => {
-        res.status(404).json({message: "endpoint not found"});
-    })
+      res.status(404).json({ message: "endpoint not found" });
+    });
 
     const PORT = process.env.PORT || 5000; // TODO: think about PROD
     // run server:
     app.listen(PORT, () => {
-        console.log(`server running at PORT ${PORT}`);
+      console.log(`server running at PORT ${PORT}`);
     });
-})
-.catch((err) => console.log(' ** ERROR ** ', err));
+  })
+  .catch((err) => console.log(" ** ERROR ** ", err));

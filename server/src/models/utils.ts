@@ -4,5 +4,7 @@
  * @returns boolean
  */
 export const membersValidator = (membersArray: string[]) => {
-    return (membersArray.length && membersArray.every((member) => member.length > 0))
-}
+  return (
+    membersArray.length && membersArray.every((member) => member.length > 0)
+  );
+};
