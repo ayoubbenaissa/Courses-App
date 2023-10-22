@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CtaButton } from "../components/CtaButton";
+import { CtaButton } from "../components/action-components/CtaButton";
 
 import iconPlus from "../assets/plus-solid.svg";
 

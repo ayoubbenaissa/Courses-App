@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CtaButton } from "../components/CtaButton";
+import { CtaButton } from "../components/action-components/CtaButton";
 
 import iconPlus from "../assets/plus-solid.svg";
 import iconModify from "../assets/icons-modify.png";
@@ -11,6 +11,7 @@ import "../styles/ModifyOrDeleteCourse.css";
 import { Course } from "../types/Courses";
 import { deleteCourse, updateCourse } from "../api/courses.api";
 import { Spinner } from "../components/Spinner";
+import { CourseActionElement } from "../components/action-components/CourseActionElement";
 
 export const ModifyOrDeleteCourse = ({course}: {course: Course}) => {
     const navigate = useNavigate();
@@ -63,10 +64,13 @@ export const ModifyOrDeleteCourse = ({course}: {course: Course}) => {
             <div className="create-update-course">
                 <h2>New Course info:</h2>
                 <div className="course-form">
-                   <div className="modify-course-item_actions_item" onClick={() => handleStartUpdatingCourse()}>
-                            <img src={iconModify} alt="icon update" />
-                            <p>update course</p>
-                    </div>
+                    <CourseActionElement
+                        action="update course"
+                        altAttr="icon modify"
+                        iconRef={iconModify}
+                        className="modify-course-item_actions_item"
+                        onClick={() => handleStartUpdatingCourse()}
+                    />
                     <div className="course-field">
                         <div className="course-field_name">Course Name</div>
                         <input minLength={1} disabled={updatesDisabled} className="course-field_content" type="text" defaultValue={courseName} onChange={e => {setCourseName(e.target.value)}} />

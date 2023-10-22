@@ -1,4 +1,4 @@
-import { CtaButton } from "./CtaButton";
+import { CtaButton } from "./action-components/CtaButton";
 import { useNavigate } from "react-router-dom";
 
 export const CreateCourseButton = () => {
