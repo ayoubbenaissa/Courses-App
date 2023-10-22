@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import { DeleteCourseModal } from './DeleteCourseModal';
 import { areCoursesUpdated$ } from '../state-signals/allCourses.signal';
 import { courseToUpdate$ } from '../state-signals/courseToUpdate.signal';
+import { CourseActionElement } from './action-components/CourseActionElement';
 
 export const CourseItem = ({courseItem}: {courseItem: Course}) => {
     const navigate = useNavigate();
@@ -62,21 +63,30 @@ export const CourseItem = ({courseItem}: {courseItem: Course}) => {
                     <div className="course-coach">coach-id: {courseItem.coachId}</div>
                 </div>
                 <div className="course-item_actions">
-                    <div className="course-item_actions_item" onClick={() => {
-                        setSelectedCourse(courseItem);
-                        setShowCourseDetails(true);
-                    }}>
-                        <img src={iconCouse} alt="icon course" />
-                        <p>show course details</p>
-                    </div>
-                    <div className="course-item_actions_item" onClick={() => handleUpdateCourse()}>
-                        <img src={iconModify} alt="icon update" />
-                        <p>update course</p>
-                    </div>
-                    <div className="course-item_actions_item" onClick={(e) => handleShowDeleteCouseModal(e)}>
-                        <img src={iconDelete} alt="icon delete" />
-                        <p>delete course</p>
-                    </div>
+                    <CourseActionElement
+                        className="course-item_actions_item" 
+                        action="show course details" 
+                        altAttr="icon course" 
+                        iconRef={iconCouse} 
+                        onClick={() => {
+                            setSelectedCourse(courseItem);
+                            setShowCourseDetails(true);
+                        }}
+                    />
+                    <CourseActionElement
+                        className="course-item_actions_item" 
+                        action="update course" 
+                        altAttr="icon update"
+                        iconRef={iconModify} 
+                        onClick={() => handleUpdateCourse()}
+                    />
+                    <CourseActionElement
+                        className="course-item_actions_item" 
+                        action="delete course" 
+                        altAttr="icon delete"
+                        iconRef={iconDelete} 
+                        onClick={(e) => handleShowDeleteCouseModal(e)}
+                    />
                 </div>
             </div>
             {(showCourseDetails && selectedCourse) && createPortal(

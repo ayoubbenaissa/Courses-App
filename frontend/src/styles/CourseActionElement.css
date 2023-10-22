@@ -1,11 +1,12 @@
-.update_course_component {
+.course_action_element {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: 2px 0px;
     cursor: pointer;
 }
 
-.update_course_component img {
+.course_action_element img {
     width: 25px;
     height: 25px;
     margin-right: 2px;

@@ -19,17 +19,6 @@
 
 .course-item_actions_item {
     height: 30%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 2px 0px;
-    cursor: pointer;
-}
-
-.course-item_actions_item img {
-    width: 25px;
-    height: 25px;
-    margin-right: 2px;
 }
 
 .course-item_content {

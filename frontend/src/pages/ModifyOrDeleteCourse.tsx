@@ -11,7 +11,7 @@ import "../styles/ModifyOrDeleteCourse.css";
 import { Course } from "../types/Courses";
 import { deleteCourse, updateCourse } from "../api/courses.api";
 import { Spinner } from "../components/Spinner";
-import { UpdateCourse } from "../components/action-components/Update";
+import { CourseActionElement } from "../components/action-components/CourseActionElement";
 
 export const ModifyOrDeleteCourse = ({course}: {course: Course}) => {
     const navigate = useNavigate();
@@ -64,7 +64,13 @@ export const ModifyOrDeleteCourse = ({course}: {course: Course}) => {
             <div className="create-update-course">
                 <h2>New Course info:</h2>
                 <div className="course-form">
-                    <UpdateCourse className="modify-course-item_actions_item" onClick={() => handleStartUpdatingCourse()} />
+                    <CourseActionElement
+                        action="update course"
+                        altAttr="icon modify"
+                        iconRef={iconModify}
+                        className="modify-course-item_actions_item"
+                        onClick={() => handleStartUpdatingCourse()}
+                    />
                     <div className="course-field">
                         <div className="course-field_name">Course Name</div>
                         <input minLength={1} disabled={updatesDisabled} className="course-field_content" type="text" defaultValue={courseName} onChange={e => {setCourseName(e.target.value)}} />
